@@ -1,0 +1,27 @@
+[
+  {
+    "no": 13301,
+    "part_no": 124,
+    "sr_no": 1215,
+    "poll_stn": "10 - MC PRIMARY BOYS SCHOOL GHITORNI",
+    "ref": "LLZ0855677",
+    "name": "DUSHYANT GULIA",
+    "relation": "BHUPENDER SINGH GULIA",
+    "address": "49",
+    "age": 39,
+    "sex": "M"
+  },
+  {
+    "no": 13300,
+    "part_no": 124,
+    "sr_no": 1212,
+    "poll_stn": "10 - MC PRIMARY BOYS SCHOOL GHITORNI",
+    "ref": "YRI0800664",
+    "name": "NEERAJ SINGHAL",
+    "relation": "VISHWA KUMAR SINGHAL",
+    "address": "38A ROAD 2",
+    "age": 40,
+    "sex": "M"
+  }
+  // add other entries similarly...
+]
