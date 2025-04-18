@@ -92,5 +92,11 @@
  {"no":"92","part_no":"124","sr_no":"1290","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI0799858","name":"FIROZA","relation":"IKLAKH","address":"167","age":"54","sex":"F"},
 {"no":"93","part_no":"124","sr_no":"1293","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI0799882","name":"SHAMIM","relation":"IKLAKH","address":"167","age":"31","sex":"M"},
 {"no":"94","part_no":"124","sr_no":"1296","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI0799916","name":"RANJEET KUMAR","relation":"JAGANATH","address":"170","age":"46","sex":"M"},
-    {"no":"95","part_no":"124","sr_no":"1299","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI2994390","name":"AMRITA KUMARI","relation":"RANJIT KUMAR CHAUDHARY","address":"170/GN-7","age":"27","sex":"F"}
+    {"no":"95","part_no":"124","sr_no":"1299","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI2994390","name":"AMRITA KUMARI","relation":"RANJIT KUMAR CHAUDHARY","address":"170/GN-7","age":"27","sex":"F"},
+ {"no":"96","part_no":"124","sr_no":"1302","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI0799973","name":"PALLAVI RAI","relation":"AJAY  RAI","address":"171","age":"33","sex":"F"},
+ {"no":"97","part_no":"124","sr_no":"1305","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI0799981","name":"MANOJ KUMAR","relation":"MAHABIR","address":"174","age":"52","sex":"M"},
+ {"no":"98","part_no":"124","sr_no":"1308","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"CPJ0800284","name":"BHAGAT SINGH","relation":"RAMBIR","address":"190","age":"39","sex":"M"},
+ {"no":"99","part_no":"124","sr_no":"1311","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI0800151","name":"MEENA KUMARI","relation":"ASHOK KUMAR","address":"192","age":"45","sex":"F"},
+ {"no":"100","part_no":"124","sr_no":"1314","poll_stn":"10 - MC PRIMARY BOYS SCHOOL GHITORNI","ref":"YRI0800193","name":"BHUVAN RAI","relation":"RAM SHARN","address":"196","age":"47","sex":"M"}
+
 ]
