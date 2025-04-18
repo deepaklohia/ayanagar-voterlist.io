@@ -88,9 +88,14 @@
 
   <script>
     async function loadVoters() {
-      const response = await fetch('voters.json');
-      const data = await response.json();
-      const table = document.getElementById('voterTable');
+
+      try {
+          const response = await fetch('voters.json');
+          const data = await response.json();
+          const table = document.getElementById('voterTable');
+      } catch (parseError) {
+      return { props: { error: 'Failed to parse JSON' } };
+    }
 
       data.forEach(voter => {
         const row = `<tr>
