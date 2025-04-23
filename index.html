@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Info</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { background: #f0f5f4; padding: 1rem; text-align: right; }
+    header a { margin-left: 10px; text-decoration: none; color: #333; font-size: 14px; }
+    .container { padding: 1rem; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; font-size: 14px; }
+    th { background-color: #eee; }
+    .search-box { margin-bottom: 1rem; width: 100%; padding: 0.5rem; font-size: 16px; }
+    .footer { text-align: center; font-size: 14px; padding: 1rem 0; color: #555; }
+    .pagination { text-align: center; margin-top: 1rem; }
+    .pagination button { margin: 0 5px; padding: 0.5rem 1rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#">Home</a>
+  <a href="#">Android App</a>
+  <a href="#">Excel</a>
+  <a href="#">Combined PDF</a>
+  <a href="#">Single PDF (ZIP)</a>
+  <a href="#">Privacy Policy</a>
+  <a href="#">Contact Us</a>
+</header>
+
+<div class="container">
+  <div style="text-align: center; margin-bottom: 1rem;">
+    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play" width="150">
+  </div>
+  <input type="text" class="search-box" id="searchInput" placeholder="Search..." onkeyup="filterData()">
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>PART NO.</th>
+        <th>SR. NO.</th>
+        <th>POLL. STN.</th>
+        <th>REF#</th>
+        <th>NAME</th>
+        <th>RELATION</th>
+        <th>ADDRESS</th>
+        <th>AGE</th>
+        <th>SEX</th>
+      </tr>
+    </thead>
+    <tbody id="voterTable"></tbody>
+  </table>
+
+  <div class="pagination">
+    <button onclick="changePage(-1)">&laquo; Prev</button>
+    <span id="pageInfo"></span>
+    <button onclick="changePage(1)">Next &raquo;</button>
+  </div>
+</div>
+
+<div class="footer">
+  &copy; 2022 <a href="https://dla.org">DLA</a>, by Deepak Lohia. All Rights Reserved
+</div>
+
+<script>
+  let originalData = [];
+  let filteredData = [];
+  let currentPage = 1;
+  const rowsPerPage = 10;
+
+  async function loadData() {
+    const res = await fetch('voters.json');
+    originalData = await res.json();
+    filteredData = [...originalData];
+    displayTable();
+  }
+
+  function displayTable() {
+    const table = document.getElementById("voterTable");
+    table.innerHTML = "";
+    const start = (currentPage - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const paginatedItems = filteredData.slice(start, end);
+
+    paginatedItems.forEach((item, index) => {
+      const row = `<tr>
+        <td>${start + index + 1}</td>
+        <td>${item.part_no}</td>
+        <td>${item.sr_no}</td>
+        <td>${item.poll_stn}</td>
+        <td>${item.ref}</td>
+        <td>${item.name}</td>
+        <td>${item.relation}</td>
+        <td>${item.address}</td>
+        <td>${item.age}</td>
+        <td>${item.sex}</td>
+      </tr>`;
+      table.innerHTML += row;
+    });
+
+    document.getElementById("pageInfo").innerText = `Page ${currentPage}`;
+  }
+
+  function changePage(direction) {
+    const maxPage = Math.ceil(filteredData.length / rowsPerPage);
+    currentPage += direction;
+    if (currentPage < 1) currentPage = 1;
+    if (currentPage > maxPage) currentPage = maxPage;
+    displayTable();
+  }
+
+  function filterData() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    filteredData = originalData.filter(item =>
+      Object.values(item).some(val => String(val).toLowerCase().includes(query))
+    );
+    currentPage = 1;
+    displayTable();
+  }
+
+  loadData();
+</script>
+
+</body>
+</html>
